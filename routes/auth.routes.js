@@ -31,6 +31,18 @@ router.post("/signup", async (req, res, next) => {
       });
       return;
     }
+    const users = await User.find()
+    console.log(users)
+    for (x of users){
+  
+      if (email === x.email){
+        res.render("auth/signup", {
+          errorMessage:
+            "Email already exists"
+        });
+        return;
+      }
+    }
     const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/; //This is a regular expression that will ensure the user's password
     // is long enough and has at least one uppercase letter
     if (!regex.test(password)) {
@@ -42,7 +54,7 @@ router.post("/signup", async (req, res, next) => {
       });
       return;
     }
-    if (password !== passwordSecondEntry) {
+     if (password !== passwordSecondEntry) {
       res.render("auth/signup", { errorMessage: "passwords must match" });
     }
     const salt = await bcrypt.genSalt(saltRounds);
