@@ -1,0 +1,24 @@
+<div class="container">
+<h2>Current Users</h2>
+     <div id="profileNav">
+        <ul class="nav nav-tabs">
+            <li class="nav-item"><a class="nav-link" href="/admin">Admin Home</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="/admin/users">See All Users</a></li>
+            <li class="nav-item"><a class="nav-link"href="/admin/all-products">Product List</a></li>
+            <li class="nav-item"><a class="nav-link" href="/admin/create-product">Create New Product</a></li>
+           
+        </ul>
+    </div>
+<div id="adminUsers">
+
+{{#each users}}
+<div class="d-flex flex-row mb-2">
+<span class="userDetails"><a href="/admin/users/{{_id}}">{{name}}</a></span>
+
+<span class="userDetails">{{email}}</span>
+</div>
+{{/each}}
+
+
+</div>
+</div>

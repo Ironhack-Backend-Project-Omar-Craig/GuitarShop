@@ -1,0 +1,23 @@
+<div>
+  <p><b>{{review.writtenBy}}</b></p>
+<form action="/profile/reviews/{{review._id}}/edit" method="POST">
+<label> Edit your review
+<input type="text" value="{{review.text}}" class="form-control" name="text" >
+</label>
+        <label for="productRating" class="form-label">Product Rating 1-5</label>
+        <input
+          type="range"
+          class="form-range"
+          min="0"
+          max="5"
+          step="1"
+          id="productRange"
+          name="stars"
+        />
+        <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+  <p>{{review.text}}</p>
+  <p>{{review.stars}} stars</p>
+  <span class="border-bottom">{{review.dateCreated}}</span>
+</div>

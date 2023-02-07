@@ -1,0 +1,25 @@
+<div class="container">
+      <h1>My Favourites</h1>
+           <div id="profileNav">
+        <ul class="nav nav-tabs">
+            <li class="nav-item"><a class="nav-link" href="/profile">My Profile</a></li>
+            <li class="nav-item"><a class="nav-link" href="/profile/favourites">Favourites</a> </li>
+            <li class="nav-item"><a class="nav-link" href="/profile/edit-details">Edit Personal Information</a> </li>
+     </ul>
+    </div>
+  <div class="productsDisplay">
+{{#each favourites}}
+<div class="card" style="width: 18rem;">
+ <a href="/products/{{_id}}"><img src="{{images}}" class="rounded mx-auto d-block" alt="..." /></a>
+        <div class="card-body">
+         <a href="/products/{{_id}}"><h5 class="card-title">{{productName}}</h5></a>
+          <p class="card-text">£{{this.price}}</p>
+             <form method="POST" action="/profile/favourites/{{this._id}}/remove">
+<button class="btn btn-danger" type="submit">remove from favourites</button>
+          </form>
+        </div>
+      </div>
+{{/each}}
+</div>
+</div>
+</div>
