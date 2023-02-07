@@ -127,9 +127,12 @@ router.get("/logout", isLoggedIn, async (req, res, next) => {
       await Review.findByIdAndUpdate(x._id, { active: false });
     }
   }
+  console.log(req.session.currentUser);
 
   req.session.destroy((err) => {
     if (err) next(err);
+    // console.log(req.session.);
+
     res.redirect("/");
   });
 });

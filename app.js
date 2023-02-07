@@ -31,15 +31,15 @@ sessionFunction(app);
 
 // Dynamic Signup/Login/Admin/Logout
 
-app.locals.isAdmin = false;
+app.locals.adminUser = false;
 
 app.use((req, res, next) => {
-  if (!req.session.adminUser || req.session.adminUser === null) {
+  if (!req.session.adminUser) {
     app.locals.userInSession = req.session.currentUser;
     app.locals.adminUser = false;
   }
   if (req.session.adminUser) {
-    app.locals.isAdmin = true;
+    app.locals.adminUser = true;
   }
 
   next();
