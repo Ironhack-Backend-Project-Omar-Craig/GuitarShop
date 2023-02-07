@@ -1,0 +1,49 @@
+<div class="container">
+        {{> profileLayout}}
+{{#if areThereAnyReviews}}
+
+<div class="container">
+<div class="profile">
+<h1>Welcome {{user.name}}</h1>
+      <h3 id="reviewHeader" class="border-bottom">Your Customer Reviews</h3>
+
+      <div id="review"></div>
+      {{#each user.reviews}}
+<p><b>{{writtenBy}}</b></p>
+<form action="/profile/reviews/{{_id}}/edit" method="GET">
+      <button type="submit">click to edit </button>
+      </form>
+
+        <p>{{text}}</p>
+        <p>{{stars}} stars</p>
+        <span class="border-bottom">{{dateCreated}}</span>
+      
+          <div id="individualProductImg">
+      <h2>{{thisReviewIsAbout.productName}}</h2>
+      <img
+        src="{{thisReviewIsAbout.images}}"
+        alt={{thisReviewIsAbout.productName}}
+        class="img-thumbnail mx-auto d-block"
+      />
+    </div>
+      {{/each}}
+      </div>
+      
+
+{{else}}
+<div>You have not reviewed any products</div>
+<div>
+        <h2>Products</h2>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/all-products">All Products</a></li>
+            <li><a href="/acoustic%20guitar">Acoustic Guitars</a></li>
+            <li><a href="/electric%20guitar">Electric Guitars</a></li>
+            <li><a href="/bass%20guitar">Bass Guitars</a></li>
+            <li><a href="/pedal">Pedals</a></li>
+            <li><a href="/amplifier">Amps</a></li>
+        </ul>
+    </div>
+{{/if}}
+
+</div>
