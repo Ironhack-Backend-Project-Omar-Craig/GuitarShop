@@ -7,7 +7,7 @@
   <div class="productsDisplay">
 {{#each userPopulated.favourites}}
 <div class="card" style="width: 18rem;">
- <a href="/products/{{_id}}"><img src="{{images}}" class="rounded mx-auto d-block" alt="..." /></a>
+ <a href="/products/{{_id}}"><img src="{{images.first}}" class="rounded mx-auto d-block" alt="..." /></a>
         <div class="card-body">
          <a href="/products/{{_id}}"><h5 class="card-title">{{productName}}</h5></a>
           <p class="card-text">£{{this.price}}</p>
@@ -18,11 +18,12 @@
       </div>
 {{/each}}
 </div>
-</div>
+
 
 
 {{else}}
-
+      <h1>My Favourites</h1>
+        {{> profileLayout}}
 <div><h1>You currently have no favourites.</h1></div>
 
 {{/if}}

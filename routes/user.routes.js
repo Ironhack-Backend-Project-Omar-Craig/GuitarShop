@@ -166,7 +166,7 @@ router.post("/reviews/:reviewId/delete", isLoggedIn, async (req, res, next) => {
 
   await review.remove();
 
-  await res.redirect("/admin/reviews");
+  await res.redirect("/profile/reviews");
 });
 
 router.get("/reviews", isLoggedIn, async (req, res, next) => {
