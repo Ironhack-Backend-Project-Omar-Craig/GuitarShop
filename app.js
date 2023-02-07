@@ -34,7 +34,7 @@ sessionFunction(app);
 app.locals.adminUser = false;
 
 app.use((req, res, next) => {
-  if (!req.session.adminUser || req.session.adminUser === null) {
+  if (!req.session.adminUser) {
     app.locals.userInSession = req.session.currentUser;
     app.locals.adminUser = false;
   }
