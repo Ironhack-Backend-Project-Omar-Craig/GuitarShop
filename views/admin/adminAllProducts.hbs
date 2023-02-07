@@ -2,21 +2,13 @@
 
 <h2>All Products</h2>
 
-     <div id="profileNav">
-        <ul class="nav nav-tabs">
-            <li class="nav-item"><a class="nav-link" href="/admin">Admin Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="/admin/users">See All Users</a></li>
-            <li class="nav-item"><a class="nav-link active" aria-current="page" href="/admin/all-products">Product List</a></li>
-            <li class="nav-item"><a class="nav-link" href="/admin/create-product">Create New Product</a></li>
-           
-        </ul>
-    </div>
+    {{> adminLayout}}
 <div class="productsDisplay">
 
 
 {{#each allProducts}}
-<div class="card" style="width: 18rem;">
-      <a href="/admin/{{_id}}"><img src="{{images}}" class="img-thumbnail mx-auto d-block" alt="..."></a>
+<div class="card shadow-lg p-3 mb-2 bg-body-tertiary rounded" style="width: 18rem;">
+      <a href="/admin/{{_id}}"><img src="{{images.first}}" class="img-thumbnail mx-auto d-block" alt="..."></a>
   <div class="card-body">
    <a href="/admin/{{_id}}"> <h5 class="card-title">{{productName}}</h5></a>
     <p class="card-text">£{{price}}</p>

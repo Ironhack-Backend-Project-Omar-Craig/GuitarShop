@@ -3,7 +3,7 @@
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="/">Home</a></li>
       <li class="breadcrumb-item"><a
-          href="/{{productType}}"
+          href="/{{individualProduct.productType}}"
         >{{individualProduct.productType}}s</a></li>
       <li
         class="breadcrumb-item active"
@@ -15,6 +15,7 @@
 
     <div id="individualProductImg">
       <h2>{{individualProduct.productName}}</h2>
+      
       <img
         src="{{individualProduct.images.second}}"
         alt="{{individualProduct.productName}}"
@@ -47,10 +48,10 @@
             <p><b>{{writtenBy}}</b></p>
             <p>{{text}}</p>
             <span class="border-bottom">{{stars}} stars</span>
-
           {{/each}}
 
-        </div>
+
+       </div>
 
       {{else}}
         <div id="review">This product has no reviews</div>

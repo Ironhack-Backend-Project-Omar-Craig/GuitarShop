@@ -1,15 +1,7 @@
 <div class="container">
-    
-    <h2>Create</h2>
-     <div id="profileNav">
-        <ul class="nav nav-tabs">
-            <li class="nav-item"><a class="nav-link" href="/admin">Admin Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="/admin/users">See All Users</a></li>
-            <li class="nav-item"><a class="nav-link" href="/admin/all-products">Product List</a></li>
-            <li class="nav-item"><a class="nav-link active" aria-current="page" href="/admin/create-product">Create New Product</a></li>
-           
-        </ul>
-    </div>
+
+    <h1>Create</h1>
+        {{> adminLayout}}
 <div id="form">
       <form action="/admin/create-product" method="POST">
     <div class="mb-3">

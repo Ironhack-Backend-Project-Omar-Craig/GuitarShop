@@ -16,7 +16,7 @@ router.get("/all-products", async (req, res, next) => {
 router.get("/acoustic%20guitar", (req, res, next) => {
   Product.find({ productType: "acoustic guitar" })
     .then((acousticGuitars) => {
-      // console.log(acousticGuitars);
+      console.log(acousticGuitars);
       res.render("all-products", { acousticGuitars });
     })
     .catch((err) => {
