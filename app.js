@@ -55,6 +55,7 @@ app.use("/", authRoutes);
 const adminRoutes = require("./routes/admin.routes");
 app.use("/admin", adminRoutes);
 
+
 const userRoutes = require("./routes/user.routes");
 app.use("/profile", userRoutes);
 
