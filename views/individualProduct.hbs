@@ -45,14 +45,17 @@
         <div id="review">
 
           {{#each individualProduct.reviews}}
-            <p><b>{{writtenBy}}</b></p>
-            {{#if active}}
+            <p>Written by: <b>{{writtenBy}}</b> on {{dateCreated}}</p>
+
+
+            <p>{{text}}</p>
+            <span>{{stars}}/5</span>
+            <br/>
+                        {{#if active}}
               <form action="/profile/reviews/{{_id}}/edit" method="GET">
-                <button type="submit">click to edit </button>
+                <button class="btn btn-primary" type="submit">Click to Edit Your Review </button>
               </form>
             {{/if}}
-            <p>{{text}}</p>
-            <span class="border-bottom">{{stars}} stars</span>
           {{/each}}
 
         </div>

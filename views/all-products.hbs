@@ -61,7 +61,7 @@
       <div class="card shadow-lg p-3 mb-2 bg-body-tertiary rounded" style="width: 18rem;">
         <a href="/products/{{_id}}"><img
             src="{{images.first}}"
-            class="img-thumbnail mx-auto d-block "
+            class="img-thumbnail mx-auto d-block"
             alt="{{productName}}"
           /></a>
         <div class="card-body">
@@ -73,7 +73,6 @@
             <form method="POST" action="/profile/add-to-favourites/{{_id}}">
               <button class="btn btn-success" type="submit">add to favourites</button>
             </form>
-
           </div>
         </div>
       </div>
@@ -186,6 +185,28 @@
 
             </form>
 
+          </div>
+        </div>
+      </div>
+
+    {{/each}}
+
+        {{#each searchResults}}
+      <div class="card shadow-lg p-3 mb-2 bg-body-tertiary rounded" style="width: 18rem;">
+        <a href="/products/{{_id}}"><img
+            src="{{images.first}}"
+            class="img-thumbnail mx-auto d-block"
+            alt="{{productName}}"
+          /></a>
+        <div class="card-body">
+          <a href="/products/{{_id}}"><h5
+              class="card-title"
+            >{{productName}}</h5></a>
+          <p class="card-text">£{{price}}</p>
+                    <div class="buttonProducts">
+            <form method="POST" action="/profile/add-to-favourites/{{_id}}">
+              <button class="btn btn-success" type="submit">add to favourites</button>
+            </form>
           </div>
         </div>
       </div>

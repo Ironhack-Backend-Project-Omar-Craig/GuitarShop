@@ -3,35 +3,36 @@
         {{> profileLayout}}
 {{#if areThereAnyReviews}}
 
-<div class="profile">
-
-
-      <div id="profileReview">
+      <div id="productsDisplay">
       {{#each user.reviews}}
-<p><b>{{writtenBy}}</b></p>
-{{#if active}}
-              <form action="/profile/reviews/{{_id}}/edit" method="GET">
-                <button type="submit">click to edit </button>
-              </form>
-            {{/if}}
-<form action="/profile/reviews/{{_id}}/edit" method="GET">
-      <button class="btn btn-primary"type="submit">click to edit </button>
-      </form>
 
-        <p>{{text}}</p>
-        <p>{{stars}} stars</p>
-        <span class="border-bottom">{{dateCreated}}</span>
-      
           <div id="individualProductImg">
       <h2>{{thisReviewIsAbout.productName}}</h2>
+      <p>{{dateCreated}}</p>
+
       <img
         src="{{thisReviewIsAbout.images.first}}"
         alt={{thisReviewIsAbout.productName}}
-        class="img-thumbnail mx-auto d-block"
+        class="img-thumbnail"
       />
     </div>
+<div id="reviewContent">
+  <span><b>Review Text</b></span>
+        <span>{{text}}</span>
+          <span><b>Review Rating:</b> {{stars}}/5</span>
+        <span></span>
+<br/><br/>
+        {{#if active}}
+              <form action="/profile/reviews/{{_id}}/edit" method="GET">
+                <button class="btn btn-primary" type="submit">click to edit </button>
+              </form>
+            {{/if}}
+      <br/>
+      <br />
+</div>
       {{/each}}
       </div>
+
       
 
 {{else}}
