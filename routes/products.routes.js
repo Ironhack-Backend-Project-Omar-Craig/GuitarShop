@@ -67,6 +67,16 @@ router.get("/amplifier", (req, res, next) => {
     });
 });
 
+router.get("/searchResults", (req, res, next) => {
+  Product.find({ productType: "amplifier" })
+    .then((amplifiers) => {
+      console.log(amplifiers);
+      res.render("all-products", { amplifiers });
+    })
+    .catch((err) => {
+      next(err);
+    });
+});
 router.get("/products/:productId", (req, res, next) => {
   Product.findById(req.params.productId)
     .populate("reviews")

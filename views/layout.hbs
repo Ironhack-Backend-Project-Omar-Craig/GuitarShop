@@ -25,16 +25,6 @@
     
 
     <div id="topNav">
-
-{{!-- Block for contextual links based on logged in status and userType --}}
-        {{!-- <ul>
-            <li><a href="/signup">Sign Up</a></li>
-            <li><a href="/login">Login</a></li>
-            <li><a href="/profile">My Profile</a></li>
-            <li><a href="/logout">Logout</a></li>
-            <li><a href="/admin">Admin</a></li>
-        </ul> --}}
-
 {{#if adminUser}}
         <ul>
             <li><i class="bi bi-person-circle text-icon"></i><a href="/profile"> My Profile</a></li>
@@ -74,8 +64,8 @@
 
       </ul>
 
-      <form class="d-flex" role="search" id="searchBar">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <form action="/search" method="POST" class="d-flex" role="search" id="searchBar" >
+        <input name="searchString" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-success" type="submit">Search</button>
       </form>
     </div>

@@ -53,12 +53,26 @@
       </ol>
     </nav>
   {{/if}}
+  {{#if searchResults}}
+    <h1>Result</h1>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Result</li>
+      </ol>
+    </nav>
+  {{else}}
+    <h1>There are no products that matched your search</h1>
+  {{/if}}
 
   <div class="productsDisplay">
 
     {{#each allProducts}}
 
-      <div class="card shadow-lg p-3 mb-2 bg-body-tertiary rounded" style="width: 18rem;">
+      <div
+        class="card shadow-lg p-3 mb-2 bg-body-tertiary rounded"
+        style="width: 18rem;"
+      >
         <a href="/products/{{_id}}"><img
             src="{{images.first}}"
             class="img-thumbnail mx-auto d-block"
@@ -80,7 +94,10 @@
     {{/each}}
 
     {{#each acousticGuitars}}
-      <div class="card shadow-lg p-3 mb-2 bg-body-tertiary rounded" style="width: 18rem;">
+      <div
+        class="card shadow-lg p-3 mb-2 bg-body-tertiary rounded"
+        style="width: 18rem;"
+      >
         <a href="/products/{{_id}}"><img
             src="{{images.first}}"
             class="img-thumbnail mx-auto d-block"
@@ -102,7 +119,10 @@
     {{/each}}
 
     {{#each electricGuitars}}
-      <div class="card shadow-lg p-3 mb-2 bg-body-tertiary rounded" style="width: 18rem;">
+      <div
+        class="card shadow-lg p-3 mb-2 bg-body-tertiary rounded"
+        style="width: 18rem;"
+      >
         <a href="/products/{{_id}}"><img
             src="{{images.first}}"
             class="img-thumbnail mx-auto d-block"
@@ -113,7 +133,7 @@
               class="card-title"
             >{{productName}}</h5></a>
           <p class="card-text">£{{price}}</p>
-                    <div class="buttonProducts">
+          <div class="buttonProducts">
             <form method="POST" action="/profile/add-to-favourites/{{_id}}">
               <button class="btn btn-success" type="submit">add to favourites</button>
             </form>
@@ -124,7 +144,10 @@
     {{/each}}
 
     {{#each bassGuitars}}
-      <div class="card shadow-lg p-3 mb-2 bg-body-tertiary rounded" style="width: 18rem;">
+      <div
+        class="card shadow-lg p-3 mb-2 bg-body-tertiary rounded"
+        style="width: 18rem;"
+      >
         <a href="/products/{{_id}}"><img
             src="{{images.first}}"
             class="img-thumbnail mx-auto d-block"
@@ -146,7 +169,10 @@
     {{/each}}
 
     {{#each pedals}}
-      <div class="card shadow-lg p-3 mb-2 bg-body-tertiary rounded" style="width: 18rem;">
+      <div
+        class="card shadow-lg p-3 mb-2 bg-body-tertiary rounded"
+        style="width: 18rem;"
+      >
         <a href="/products/{{_id}}"><img
             src="{{images.first}}"
             class="img-thumbnail mx-auto d-block"
@@ -168,7 +194,10 @@
     {{/each}}
 
     {{#each amplifiers}}
-      <div class="card shadow-lg p-3 mb-2 bg-body-tertiary rounded" style="width: 18rem;">
+      <div
+        class="card shadow-lg p-3 mb-2 bg-body-tertiary rounded"
+        style="width: 18rem;"
+      >
         <a href="/products/{{_id}}"><img
             src="{{images.first}}"
             class="img-thumbnail mx-auto d-block"
@@ -191,8 +220,11 @@
 
     {{/each}}
 
-        {{#each searchResults}}
-      <div class="card shadow-lg p-3 mb-2 bg-body-tertiary rounded" style="width: 18rem;">
+    {{#each searchResults}}
+      <div
+        class="card shadow-lg p-3 mb-2 bg-body-tertiary rounded"
+        style="width: 18rem;"
+      >
         <a href="/products/{{_id}}"><img
             src="{{images.first}}"
             class="img-thumbnail mx-auto d-block"
@@ -203,7 +235,7 @@
               class="card-title"
             >{{productName}}</h5></a>
           <p class="card-text">£{{price}}</p>
-                    <div class="buttonProducts">
+          <div class="buttonProducts">
             <form method="POST" action="/profile/add-to-favourites/{{_id}}">
               <button class="btn btn-success" type="submit">add to favourites</button>
             </form>

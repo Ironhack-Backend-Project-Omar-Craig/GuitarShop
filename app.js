@@ -39,11 +39,13 @@ app.use((req, res, next) => {
     app.locals.adminUser = false;
   }
   if (req.session.adminUser) {
+    app.locals.userInSession = req.session.currentUser;
     app.locals.adminUser = true;
   }
 
   next();
 });
+
 
 // 👇 Start handling routes here
 const indexRoutes = require("./routes/index.routes");
@@ -54,7 +56,6 @@ app.use("/", authRoutes);
 
 const adminRoutes = require("./routes/admin.routes");
 app.use("/admin", adminRoutes);
-
 
 const userRoutes = require("./routes/user.routes");
 app.use("/profile", userRoutes);
