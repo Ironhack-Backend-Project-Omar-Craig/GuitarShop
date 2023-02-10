@@ -18,9 +18,10 @@ router.post("/search", async (req, res, next) => {
       { colour: { $regex: searchString, $options: "i" } },
     ],
   });
+  if (searchResults.length === 0) {
+    searchResults.push({ empty: true });
+  }
   res.render("all-products", { searchResults });
 });
 
 module.exports = router;
-
-
