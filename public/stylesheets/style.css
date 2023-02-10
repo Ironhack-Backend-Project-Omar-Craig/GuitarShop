@@ -291,6 +291,8 @@ max-height: 300px;
   border-width: 1px;
   border-radius: 4px;
   padding: 10px;
+  max-width: 75vw;
+  margin-bottom: 20px;
 
   
 }

@@ -8,6 +8,21 @@ const bcrypt = require("bcryptjs");
 const { populate } = require("../models/User.model");
 const saltRounds = 10;
 
+router.post(
+  "/add-to-favourites/:productId",
+  isLoggedIn,
+  async (req, res, next) => {
+    try {
+      await User.findByIdAndUpdate(req.session.currentUser._id, {
+        $push: { favourites: req.params.productId },
+      });
+      await res.redirect("/profile/favourites");
+    } catch (err) {
+      next(err);
+    }
+  }
+);
+
 router.get("/", isLoggedIn, (req, res, next) => {
   try {
     res.render("profile/user-profile", {
