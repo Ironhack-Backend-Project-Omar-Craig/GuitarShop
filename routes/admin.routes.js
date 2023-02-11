@@ -10,6 +10,22 @@ const {
 const bcrypt = require("bcryptjs");
 const saltRounds = 10;
 
+router.get("/create-product", isLoggedIn, isAdmin, (req, res, next) => {
+  try {
+    res.render("admin/adminCreateProduct");
+  } catch (err) {
+    next(err);
+  }
+});
+router.post("/create-product", isLoggedIn, isAdmin, async (req, res, next) => {
+  try {
+    await Product.create(req.body);
+    res.redirect("/admin/all-products");
+  } catch (err) {
+    next(err);
+  }
+});
+
 router.get("/", isLoggedIn, isAdmin, (req, res, next) => {
   try {
     res.render("admin/adminHome", {
@@ -19,6 +35,8 @@ router.get("/", isLoggedIn, isAdmin, (req, res, next) => {
     next(err);
   }
 });
+
+
 
 router.get("/all-products", isLoggedIn, isAdmin, async (req, res, next) => {
   try {
@@ -31,22 +49,6 @@ router.get("/all-products", isLoggedIn, isAdmin, async (req, res, next) => {
   }
 });
 
-router.get("/create-product", isLoggedIn, isAdmin, (req, res, next) => {
-  try {
-    res.render("admin/adminCreateProduct");
-  } catch (err) {
-    next(err);
-  }
-});
-
-router.post("/create-product", isLoggedIn, isAdmin, async (req, res, next) => {
-  try {
-    await Product.create(req.body);
-    res.redirect("admin/all-products");
-  } catch (err) {
-    next(err);
-  }
-});
 
 router.get("/reviews", isLoggedIn, isAdmin, async (req, res, next) => {
   try {
