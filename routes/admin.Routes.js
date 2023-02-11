@@ -42,7 +42,7 @@ router.get("/create-product", isLoggedIn, isAdmin, (req, res, next) => {
 router.post("/create-product", isLoggedIn, isAdmin, async (req, res, next) => {
   try {
     await Product.create(req.body);
-    res.redirect("/admin/all-products");
+    res.redirect("admin/all-products");
   } catch (err) {
     next(err);
   }
