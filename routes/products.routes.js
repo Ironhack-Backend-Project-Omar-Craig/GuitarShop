@@ -82,7 +82,7 @@ router.get("/products/:productId", (req, res, next) => {
     .populate("reviews")
     .then((individualProduct) => {
       console.log(
-        `THIS IS THE PRODUCT PAGE FOR >>>>> ${individualProduct.productName}`
+        `THIS IS THE PRODUCT PAGE FOR >>>>> ${individualProduct}`
       );
       let areThereAnyReviews = true;
       if (individualProduct.reviews.length === 0) {
