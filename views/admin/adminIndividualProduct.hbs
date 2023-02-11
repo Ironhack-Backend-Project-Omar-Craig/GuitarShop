@@ -25,10 +25,10 @@
   <input type="text" value="{{price}}" name="price" class="form-control" id="price" placeholder="{{price}}">
 </div>
     <div class="mb-3">
-      <img src="{{images}}" class="img-thumbnail" alt="..." />
+      <img src="{{images.first}}" class="img-thumbnail" alt="..." />    <img src="{{images.second}}" class="img-thumbnail" alt="..." />
       <br/>
   <label for="images" class="form-label">Image URL</label>
-  <input type="text" value="{{images}}" name="images" class="form-control" id="images" placeholder="{{images}}">
+  <input type="text" value="{{images.first}}, {{images.second}}" name="images" class="form-control" id="images" placeholder="{{images}}">
 </div>
     <div class="mb-3">
   <label for="colour" class="form-label">Colour</label>
