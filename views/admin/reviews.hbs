@@ -6,9 +6,9 @@
 
 <h1>Welcome {{currentUser.name}}</h1>
       <h3 id="reviewHeader" class="border-bottom">Customer Reviews</h3>
-
-      {{#each reviews}}
                         <div class="adminReview">
+      {{#each reviews}}
+
                 <div id="individualProductImg">
 
       <h2>{{thisReviewIsAbout.productName}}</h2>
@@ -18,6 +18,9 @@
         class="cardimg">
     </div>
         <p>Written By: <b>{{writtenBy}}</b></p>
+     
+
+         
         <p>Review Text: {{text}}</p>
         <p>Rating: {{stars}}/5 stars</p>
         <span class="border-bottom">{{dateCreated}}</span>
